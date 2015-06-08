@@ -1,0 +1,4 @@
+debian/etc-libnl-3.diff -p1
+debian/out-of-tree.diff -p1
+debian/cli-out-of-tree.diff
+debian/no-symvers.diff

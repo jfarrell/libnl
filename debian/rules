@@ -1,0 +1,19 @@
+#!/usr/bin/make -f
+
+# export DH_VERBOSE=1
+
+DEB_BUILDDIR = debian/build
+DEB_MAKE_FLAVORS = main
+
+include /usr/share/cdbs/1/rules/debhelper.mk
+include /usr/share/cdbs/1/rules/autoreconf.mk
+include /usr/share/cdbs/1/class/autotools.mk
+
+DEB_DH_STRIP_ARGS := --dbg-package=libnl-3-200-dbg
+
+DEB_MAKE_DESTDIRSKEL = $(CURDIR)/debian/tmp
+
+DEB_CONFIGURE_EXTRA_FLAGS += --libdir=\$${prefix}/lib/$(DEB_HOST_MULTIARCH)
+
+clean::
+	rm -rf $(DEB_BUILDDIR)

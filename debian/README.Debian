@@ -1,0 +1,9 @@
+
+libnl versions explained
+========================
+
+Once libnl3 hits the archive there will exist 3 versions of libnl.
+libnl1 with libnl-dev  - up until March 2011 the stable version
+libnl2 with libnl2-dev - development version that resulted in
+libnl3 with libnl3-dev - the new stable (API and ABI wise) version
+

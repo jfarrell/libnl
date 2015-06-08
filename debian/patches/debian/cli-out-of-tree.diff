@@ -1,0 +1,20 @@
+commit 6bc71f8ccf927c8e1c75c24aa739c42aa08f0e88
+Author: jfarrell <jfarrell@apache.org>
+Date:   Mon Jun 8 10:55:06 2015 -0400
+
+    fix path to cli linker version script for out-of-tree build
+
+--- a/src/lib/Makefile.am
++++ b/src/lib/Makefile.am
+@@ -43,9 +43,9 @@ lib_LTLIBRARIES = \
+ 
+ libnl_cli_3_la_LDFLAGS = \
+ 	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE) \
+-	-Wl,--version-script=$(top_builddir)/libnl-cli-3.sym
++	-Wl,--version-script=$(top_srcdir)/libnl-cli-3.sym
+ libnl_cli_3_la_DEPENDENCIES = \
+-	$(top_builddir)/libnl-cli-3.sym
++	$(top_srcdir)/libnl-cli-3.sym
+ 
+ libnl_cli_3_la_LIBADD  = ${top_builddir}/lib/libnl-3.la \
+ 		       ${top_builddir}/lib/libnl-route-3.la \
